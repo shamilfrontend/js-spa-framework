@@ -1,3 +1,8 @@
-console.log('app working');
+import {bootstrap} from './framework'
+import {appModule} from './app/app.module'
+import {wfm} from './framework'
 
-document.querySelector('h1').textContent = 'Working!';
+wfm.delay(500)
+  .then(() => {
+    bootstrap(appModule);
+  });

@@ -10,10 +10,36 @@
   <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    #preloader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
 </head>
 <body>
 
-<h1>test1</h1>
+<app-root>
+  <div id="preloader">
+    <div class="preloader-wrapper active">
+      <div class="spinner-layer spinner-red-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-root>
 
 </body>
 </html>
