@@ -1,0 +1,50 @@
+Arguments: 
+  /Users/sh.alisultanov/.nvm/versions/node/v12.4.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add materialize-css@next --save
+
+PATH: 
+  /Users/sh.alisultanov/.nvm/versions/node/v12.4.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/sh.alisultanov/Desktop/Projects/github/js-spa-framework/node_modules/.bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.4.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/sh.alisultanov/Desktop/Projects/github/js-spa-framework/node_modules/abbrev'
+
+npm manifest: 
+  {
+    "name": "js-spa-framework",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "webpack-dev-server",
+      "build": "webpack"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/shamilfrontend/js-spa-framework.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/shamilfrontend/js-spa-framework/issues"
+    },
+    "homepage": "https://github.com/shamilfrontend/js-spa-framework#readme",
+    "devDependencies": {
+      "html-webpack-plugin": "^3.2.0",
+      "webpack": "^4.41.2",
+      "webpack-dev-server": "^3.9.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
