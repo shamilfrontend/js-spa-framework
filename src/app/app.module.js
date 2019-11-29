@@ -1,6 +1,8 @@
 import { ShFModule } from '../framework'
 
+// components
 import { appComponent } from "./app.component";
+import { appHeader } from "./common/app.header";
 
 class AppModule extends ShFModule {
   constructor(config) {
@@ -10,6 +12,8 @@ class AppModule extends ShFModule {
 
 export const appModule = new AppModule({
   components: [
-    appComponent
-  ]
+    appHeader
+  ],
+
+  bootstrap: appComponent
 });

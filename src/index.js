@@ -1,4 +1,7 @@
-import { bootstrap } from "./framework";
+import {bootstrap, utils} from "./framework";
 import { appModule } from "./app/app.module";
 
-bootstrap(appModule);
+utils.delay()
+  .then(() => {
+    bootstrap(appModule);
+  });

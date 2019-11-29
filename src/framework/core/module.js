@@ -1,6 +1,7 @@
 export class Module {
   constructor(config) {
     this.components = config.components;
+    this.bootstrapComponent = config.bootstrap;
   }
 
   start() {
@@ -8,6 +9,7 @@ export class Module {
   }
 
   initComponents() {
+    this.bootstrapComponent.render();
     this.components.forEach(component => component.render())
   }
 }
