@@ -1,4 +1,5 @@
 import { ShFModule } from '../framework'
+import { appRoutes } from './app.routes'
 
 // components
 import { appComponent } from "./app.component";
@@ -15,5 +16,7 @@ export const appModule = new AppModule({
     appHeader
   ],
 
-  bootstrap: appComponent
+  bootstrap: appComponent,
+
+  routes: appRoutes
 });
