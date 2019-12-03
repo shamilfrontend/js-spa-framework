@@ -34,7 +34,9 @@ export class Module {
     this.renderComponent(route.component);
   }
 
-  renderComponent(c) {
-    c.render();
+  renderComponent(component) {
+    if (component.beforeInit) component.beforeInit();
+    component.render();
+    if (component.afterInit) component.afterInit();
   }
 }
