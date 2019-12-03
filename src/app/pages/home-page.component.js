@@ -1,8 +1,28 @@
-import {ShFComponent} from "../../framework";
+import { ShFComponent } from "../../framework";
+import { router } from "../../framework/tools/router";
 
 class HomePageComponent extends ShFComponent{
   constructor(config) {
     super(config);
+  }
+
+  events() {
+    return {
+      'click .js-link': 'goToTabs'
+    }
+  }
+
+  beforeInit() {
+    console.log('Component beforeInit')
+  }
+
+  afterInit() {
+    console.log('Component afterInit')
+  }
+
+  goToTabs(event) {
+    event.preventDefault();
+    router.navigate('tabs');
   }
 }
 
@@ -18,7 +38,7 @@ export const homePageComponent = new HomePageComponent({
             <p>Пока тут нет никакого функционала</p>
           </div>
           <div class="card-action">
-            <a href="#">Перейти на другую страницу</a>
+            <a href="#" class="js-link">Перейти на другую страницу</a>
           </div>
         </div>
       </div>
