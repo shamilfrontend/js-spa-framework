@@ -1,4 +1,4 @@
-import { ShFComponent } from "../../framework";
+import { ShFComponent } from "framework";
 
 class AppHeader extends ShFComponent {
   constructor(props) {

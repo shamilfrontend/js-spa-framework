@@ -1,7 +1,7 @@
-import {bootstrap, utils} from "./framework";
+import {bootstrap, _} from "framework";
 import { appModule } from "./app/app.module";
 
-utils.delay()
+_.delay()
   .then(() => {
     bootstrap(appModule);
   });

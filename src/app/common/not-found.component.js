@@ -1,4 +1,4 @@
-import { ShFComponent } from "../../framework";
+import { ShFComponent } from "framework";
 
 class NotFound extends ShFComponent {
   constructor(props) {

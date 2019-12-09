@@ -10,20 +10,20 @@ export class Component {
     if (!this._el) throw new Error(`Component with selector ${this.selector} wasn't found`);
     this._el.innerHTML = this.template;
 
-    this._initEvents();
+    initEvents.call(this);
   }
+}
 
-  _initEvents() {
-    if (!this.events) return;
+function initEvents() {
+  if (!this.events) return;
 
-    let events = this.events();
+  let events = this.events();
 
-    Object.keys(events).forEach(key => {
-      let listener = key.split(' ');
+  Object.keys(events).forEach(key => {
+    let listener = key.split(' ');
 
-      this._el
-        .querySelector(listener[1])
-        .addEventListener(listener[0], this[events[key]].bind(this))
-    })
-  }
+    this._el
+      .querySelector(listener[1])
+      .addEventListener(listener[0], this[events[key]].bind(this))
+  })
 }

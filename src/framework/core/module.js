@@ -1,4 +1,6 @@
-import {router} from "../tools/router";
+import { renderComponent } from "./component/render-component";
+import { RoutingModule } from "./routing/routing.module";
+import { _ } from "../tools/utils";
 
 export class Module {
   constructor(config) {
@@ -8,35 +10,22 @@ export class Module {
   }
 
   start() {
-    this.initComponents();
-    if (this.routes) this.initRoutes()
+    initComponents(this.bootstrapComponent, this.components);
+    initRoutes(this.routes);
   }
+}
 
-  initComponents() {
-    this.bootstrapComponent.render();
-    this.components.forEach(this.renderComponent.bind(this))
+function initComponents(bootstrap, components) {
+  if (_.isUndefined(bootstrap)) {
+    throw new Error('Bootstrap component is not defined');
   }
+  [bootstrap, ...components].forEach(renderComponent);
+}
 
-  initRoutes() {
-    window.addEventListener('hashchange', this.renderRoute.bind(this));
-    this.renderRoute();
-  }
+function initRoutes(routes) {
+  if (_.isUndefined(routes)) return;
 
-  renderRoute() {
-    let route = this.routes.find(route => route.path === router.getUrl());
+  const routing = new RoutingModule(routes);
 
-    if (!route) {
-      route = this.routes.find( route => route.path === '**')
-    }
-
-    const { selector } = route.component;
-    document.querySelector('router-outlet').innerHTML = `<${selector}></${selector}>`;
-    this.renderComponent(route.component);
-  }
-
-  renderComponent(component) {
-    if (component.beforeInit) component.beforeInit();
-    component.render();
-    if (component.afterInit) component.afterInit();
-  }
+  routing.init();
 }

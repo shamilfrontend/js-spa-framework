@@ -1,8 +1,8 @@
-import {ShFComponent} from "../../framework";
+import {ShFComponent} from "framework"
 
 class TabsPageComponent extends ShFComponent {
   constructor(config) {
-    super(config);
+    super(config)
   }
 
   events() {

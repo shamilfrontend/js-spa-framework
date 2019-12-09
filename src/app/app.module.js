@@ -1,4 +1,4 @@
-import { ShFModule } from '../framework'
+import { ShFModule } from 'framework'
 import { appRoutes } from './app.routes'
 
 // components

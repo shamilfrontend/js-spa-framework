@@ -1,5 +1,4 @@
-import { ShFComponent } from "../../framework";
-import { router } from "../../framework/tools/router";
+import { ShFComponent, router } from "framework"
 
 class HomePageComponent extends ShFComponent{
   constructor(config) {
@@ -10,14 +9,6 @@ class HomePageComponent extends ShFComponent{
     return {
       'click .js-link': 'goToTabs'
     }
-  }
-
-  beforeInit() {
-    console.log('Component beforeInit')
-  }
-
-  afterInit() {
-    console.log('Component afterInit')
   }
 
   goToTabs(event) {
