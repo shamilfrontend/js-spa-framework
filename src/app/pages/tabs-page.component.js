@@ -1,4 +1,4 @@
-import {ShFComponent} from "framework"
+import { ShFComponent } from "framework"
 
 class TabsPageComponent extends ShFComponent {
   constructor(config) {
@@ -23,7 +23,7 @@ export const tabsPageComponent = new TabsPageComponent({
   selector: 'app-tabs-page',
 
   template: `
-    <h1 style="text-align: center;">Tabs Page</h1>
+    <h1 class="tab-page-title">Tabs Page</h1>
     <div class="row">
       <div class="col s6 offset-s3">
         <ul class="collapsible popout collapsible-accordion">
@@ -54,5 +54,11 @@ export const tabsPageComponent = new TabsPageComponent({
         </ul>
       </div>
     </div>
-`
+  `,
+
+  styles: `
+    .tab-page-title {
+      text-align: center;
+    }
+  `
 });
