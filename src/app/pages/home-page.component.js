@@ -25,7 +25,7 @@ export const homePageComponent = new HomePageComponent({
       <div class="col s6 offset-s3">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Главная страница</span>
+            <span class="card-title">{{ title }}</span>
             <p>Пока тут нет никакого функционала</p>
           </div>
           <div class="card-action">

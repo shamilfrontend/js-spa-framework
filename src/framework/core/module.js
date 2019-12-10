@@ -1,6 +1,5 @@
-import { renderComponent } from "./component/render-component";
-import { RoutingModule } from "./routing/routing.module";
-import { _ } from "../tools/utils";
+import { initRoutes } from "./routing/init-routing";
+import { initComponents } from "./component/init-components";
 
 export class Module {
   constructor(config) {
@@ -13,19 +12,4 @@ export class Module {
     initComponents(this.bootstrapComponent, this.components);
     initRoutes(this.routes);
   }
-}
-
-function initComponents(bootstrap, components) {
-  if (_.isUndefined(bootstrap)) {
-    throw new Error('Bootstrap component is not defined');
-  }
-  [bootstrap, ...components].forEach(renderComponent);
-}
-
-function initRoutes(routes) {
-  if (_.isUndefined(routes)) return;
-
-  const routing = new RoutingModule(routes);
-
-  routing.init();
 }
