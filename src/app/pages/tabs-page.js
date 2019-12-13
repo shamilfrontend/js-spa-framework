@@ -1,6 +1,6 @@
-import {ShFComponent} from "framework"
+import { ShFComponent, $ } from "framework"
 
-class TabsPageComponent extends ShFComponent {
+class TabsPage extends ShFComponent {
   constructor(config) {
     super(config)
   }
@@ -12,18 +12,21 @@ class TabsPageComponent extends ShFComponent {
   }
 
   onTabClick({ target }) {
-    if (!target.classList.contains('collapsible-header')) return;
+    const $target = $(target);
+    if (!$target.hasClass('collapsible-header')) return;
 
-    this._el.querySelectorAll('.js-tab').forEach(tab => tab.classList.remove('active'))
-    target.parentNode.classList.add('active')
+    const tabs = this.el.findAll('.js-tab');
+
+    tabs.forEach(element => element.removeClass('active'));
+    $target.parent().addClass('active');
   }
 }
 
-export const tabsPageComponent = new TabsPageComponent({
+export const tabsPage = new TabsPage({
   selector: 'app-tabs-page',
 
   template: `
-    <h1 style="text-align: center;">Tabs Page</h1>
+    <h1 class="tab-page-title">Tabs Page</h1>
     <div class="row">
       <div class="col s6 offset-s3">
         <ul class="collapsible popout collapsible-accordion">
@@ -54,5 +57,11 @@ export const tabsPageComponent = new TabsPageComponent({
         </ul>
       </div>
     </div>
-`
+  `,
+
+  styles: `
+    .tab-page-title {
+      text-align: center;
+    }
+  `
 });

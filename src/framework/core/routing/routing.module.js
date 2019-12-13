@@ -1,9 +1,10 @@
-import { _, router } from "framework";
+import { _, router, $ } from "framework";
 import { renderComponent } from "../component/render-component";
 
 export class RoutingModule {
-  constructor(routes) {
-    this.routes = routes
+  constructor(routes, dispatcher) {
+    this.routes = routes;
+    this.dispatcher = dispatcher;
   }
 
   init() {
@@ -20,6 +21,8 @@ function renderRoute() {
   }
 
   const {selector} = route.component;
-  document.querySelector('router-outlet').innerHTML = `<${selector}></${selector}>`;
-  renderComponent(route.component)
+  $('router-outlet').html(`<${selector}></${selector}>`);
+  renderComponent(route.component);
+
+  this.dispatcher.emit('routing.change-page');
 }
