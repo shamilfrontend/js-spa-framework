@@ -1,11 +1,11 @@
 import { ShFComponent, router } from "framework"
 
-class HomePageComponent extends ShFComponent{
+class HomePage extends ShFComponent{
   constructor(config) {
     super(config);
 
     this.data = {
-      title: 'Главная страница',
+      title: 'Главная страница!!!',
       description: 'Пока тут нет никакого функционала',
       linkTabPage: '#tabs',
       linkTitle: 'Перейти на другую страницу'
@@ -24,7 +24,7 @@ class HomePageComponent extends ShFComponent{
   }
 }
 
-export const homePageComponent = new HomePageComponent({
+export const homePage = new HomePage({
   selector: 'app-home-page',
 
   template: `
@@ -42,6 +42,7 @@ export const homePageComponent = new HomePageComponent({
       </div>
     </div>
   `,
+
   styles: `
     .home-page {
       padding-top: 40px;

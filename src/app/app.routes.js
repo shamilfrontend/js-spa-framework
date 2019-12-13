@@ -1,15 +1,21 @@
-import { homePageComponent } from './pages/home-page.component';
-import { tabsPageComponent } from './pages/tabs-page.component';
+import { homePage } from './pages/home-page';
+import { tabsPage } from './pages/tabs-page';
+import { directivePage } from './pages/directive.page';
+
 import { notFound } from './common/not-found.component';
 
 export const appRoutes = [
   {
     path: '',
-    component: homePageComponent
+    component: homePage
   },
   {
     path: 'tabs',
-    component: tabsPageComponent
+    component: tabsPage
+  },
+  {
+    path: 'directive',
+    component: directivePage
   },
   {
     path: '**',
