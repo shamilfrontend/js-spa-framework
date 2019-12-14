@@ -1,4 +1,4 @@
-import { ShFComponent, router } from "framework"
+import { ShFComponent, router, http } from "framework"
 
 class HomePage extends ShFComponent{
   constructor(config) {
@@ -8,7 +8,8 @@ class HomePage extends ShFComponent{
       title: 'Главная страница!!!',
       description: 'Пока тут нет никакого функционала',
       linkTabPage: '#tabs',
-      linkTitle: 'Перейти на другую страницу'
+      linkTitle: 'Перейти на другую страницу',
+      ip: ''
     }
   }
 
@@ -16,6 +17,14 @@ class HomePage extends ShFComponent{
     return {
       'click .js-link': 'goToTabs'
     }
+  }
+
+  mounted() {
+    http.get('https://api.ipify.org/?format=json')
+      .then(({ ip }) => {
+        this.data.ip = ip;
+        this.render();
+      })
   }
 
   goToTabs(event) {
@@ -34,6 +43,7 @@ export const homePage = new HomePage({
           <div class="card-content white-text">
             <span class="card-title">{{ title }}</span>
             <p>{{ description }}</p>
+            <p>Текущий IP-адрес: {{ ip }}</p>
           </div>
           <div class="card-action">
             <a href="{{ linkTabPage }}" class="js-link">{{ linkTitle }}</a>

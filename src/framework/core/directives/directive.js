@@ -19,9 +19,6 @@ export class Directive {
 }
 
 function getParamValue(element, selector) {
-  // const directiveName = selector.slice(1).slice(0, selector.length - 2);
   const directiveName = selector.replace('[', '').replace(']', '');
-  console.log('directiveName', directiveName);
-  return element
-    .attr(directiveName)
+  return element.attr(directiveName)
 }

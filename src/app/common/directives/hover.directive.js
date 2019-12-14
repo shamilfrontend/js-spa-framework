@@ -10,7 +10,6 @@ export const appHoverDirective = new AppHoverDirective({
   selector: '[v-hover]',
 
   onInit(element, color = 'blue') {
-    console.log('element', element);
     const defaultColor = element.css().color;
 
     element.on('mouseenter', () => {

@@ -52,7 +52,6 @@ function compileTemplate(template, data) {
       pipe = parsePipe(key);
       key = getKeyFromPipe(key);
     }
-    console.log('pipe', pipe);
 
     if (_.isUndefined(pipe)) return data[key];
 
