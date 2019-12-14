@@ -1,5 +1,8 @@
 import { _, $ } from "framework";
 
+import { parsePipe } from '../pipes/parse-зipe';
+import { applyPipe } from '../pipes/apply-pipe';
+
 export class Component {
   constructor(config) {
     this.selector = config.selector;
@@ -41,8 +44,19 @@ function compileTemplate(template, data) {
 
   const re = /{{(.*?)}}/g;
 
-  template = template.replace(re, (string, key) => {
-    return data[key.trim()];
+  template = template.replace(re, (string, expression) => {
+    let key = expression.trim();
+    let pipe;
+
+    if (hasPipe(key)) {
+      pipe = parsePipe(key);
+      key = getKeyFromPipe(key);
+    }
+    console.log('pipe', pipe);
+
+    if (_.isUndefined(pipe)) return data[key];
+
+    return applyPipe(pipe, data[key]);
   });
 
   return template;
@@ -55,4 +69,12 @@ function initStyles(styles) {
   style.html(styles);
 
   $(document.head).append(style)
+}
+
+function hasPipe(key) {
+  return key.includes('|');
+}
+
+function getKeyFromPipe(key) {
+  return key.split('|')[0].trim();
 }

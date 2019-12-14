@@ -26,7 +26,7 @@ export const tabsPage = new TabsPage({
   selector: 'app-tabs-page',
 
   template: `
-    <h1 class="tab-page-title">Tabs Page</h1>
+    <h1 class="center">Tabs Page</h1>
     <div class="row">
       <div class="col s6 offset-s3">
         <ul class="collapsible popout collapsible-accordion">
@@ -60,8 +60,5 @@ export const tabsPage = new TabsPage({
   `,
 
   styles: `
-    .tab-page-title {
-      text-align: center;
-    }
   `
 });

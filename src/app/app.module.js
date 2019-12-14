@@ -5,6 +5,7 @@ import { appRoutes } from './app.routes'
 import { appComponent } from "./app.component";
 import { appHeader } from "./common/app.header";
 import { appHoverDirective } from "./common/directives/hover.directive";
+import { multiPipe } from "./common/pipes/multi.pipe";
 
 class AppModule extends ShFModule {
   constructor(config) {
@@ -23,5 +24,9 @@ export const appModule = new AppModule({
 
   directives: [
     appHoverDirective
+  ],
+
+  pipes: [
+    multiPipe
   ]
 });
