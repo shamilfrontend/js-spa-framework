@@ -1,8 +1,8 @@
 // core
-import { Module as ShFModule } from './core/module'
-import { Component as ShFComponent } from './core/component/component'
-import { Directive as ShFDirective } from './core/directives/directive'
-import { Pipe as ShFPipe } from './core/pipes/pipe'
+import { Module as VModule } from './core/module'
+import { Component as VComponent } from './core/component/component'
+import { Directive as VDirective } from './core/directives/directive'
+import { Pipe as VPipe } from './core/pipes/pipe'
 import { bootstrap } from './core/functions/bootstrap'
 import { router } from './core/routing/router'
 import { EventEmitter } from './tools/event.emitter'
@@ -13,10 +13,10 @@ import { $ } from './tools/dom-manipulations'
 import { http } from './tools/http'
 
 export {
-  ShFModule,
-  ShFComponent,
-  ShFDirective,
-  ShFPipe,
+  VModule,
+  VComponent,
+  VDirective,
+  VPipe,
   bootstrap,
   router,
   EventEmitter,

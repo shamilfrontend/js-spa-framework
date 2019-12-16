@@ -1,6 +1,6 @@
-import { ShFComponent } from "framework";
+import { VComponent } from "framework";
 
-class AppComponent extends ShFComponent {
+class AppComponent extends VComponent {
   constructor(config) {
     super(config)
   }

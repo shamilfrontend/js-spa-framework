@@ -1,6 +1,6 @@
-import { ShFDirective } from "framework";
+import { VDirective } from "framework";
 
-class AppHoverDirective extends ShFDirective {
+class AppHoverDirective extends VDirective {
   constructor(config) {
     super(config);
   }

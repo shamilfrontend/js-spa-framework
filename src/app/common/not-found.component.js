@@ -1,6 +1,6 @@
-import { ShFComponent } from "framework";
+import { VComponent } from "framework";
 
-class NotFound extends ShFComponent {
+class NotFound extends VComponent {
   constructor(props) {
     super(props);
   }

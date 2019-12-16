@@ -1,6 +1,6 @@
-import { ShFComponent } from 'framework'
+import { VComponent } from 'framework'
 
-class PipesPage extends ShFComponent {
+class PipesPage extends VComponent {
   constructor(config) {
     super(config);
 

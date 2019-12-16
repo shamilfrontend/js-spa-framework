@@ -1,6 +1,6 @@
-import { ShFComponent, router, http } from "framework"
+import { VComponent, router, http } from "framework"
 
-class HomePage extends ShFComponent{
+class HomePage extends VComponent{
   constructor(config) {
     super(config);
 

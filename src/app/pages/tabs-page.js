@@ -1,6 +1,6 @@
-import { ShFComponent, $ } from "framework"
+import { VComponent, $ } from "framework"
 
-class TabsPage extends ShFComponent {
+class TabsPage extends VComponent {
   constructor(config) {
     super(config)
   }

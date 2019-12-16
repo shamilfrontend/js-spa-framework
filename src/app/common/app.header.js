@@ -1,6 +1,6 @@
-import { ShFComponent } from "framework";
+import { VComponent } from "framework";
 
-class AppHeader extends ShFComponent {
+class AppHeader extends VComponent {
   constructor(props) {
     super(props);
   }

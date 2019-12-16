@@ -1,4 +1,4 @@
-import { ShFModule } from 'framework'
+import { VModule } from 'framework'
 import { appRoutes } from './app.routes'
 
 // components
@@ -7,7 +7,7 @@ import { appHeader } from "./common/app.header";
 import { appHoverDirective } from "./common/directives/hover.directive";
 import { multiPipe } from "./common/pipes/multi.pipe";
 
-class AppModule extends ShFModule {
+class AppModule extends VModule {
   constructor(config) {
     super(config)
   }

@@ -1,6 +1,6 @@
-import { ShFPipe } from 'framework';
+import { VPipe } from 'framework';
 
-class MultiPipe extends ShFPipe {
+class MultiPipe extends VPipe {
   constructor(config) {
     super(config);
   }

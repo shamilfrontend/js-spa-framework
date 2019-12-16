@@ -1,6 +1,6 @@
-import { ShFComponent } from 'framework'
+import { VComponent } from 'framework'
 
-class DirectivePage extends ShFComponent {
+class DirectivePage extends VComponent {
   constructor(config) {
     super(config);
   }
